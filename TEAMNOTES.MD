@@ -1,3 +1,15 @@
+**# In-class assignments**
+10/5/2021 - Questions/Answers
+1. Characteristics: Colored Banner, Icon, Header/Subheader, Content Body, 
+2. Design Considerations: Flexibility of card design for reusability, font-size, card size, heading overflow spillage, color, responsiveness
+3. Accessibility Concerns: Readability,  Color-Blindness, Having correct tagging/titles for blind accessability/Proper labeling, Contrast, Being able to access HTML content separately through tab, Typography hierarchy/heading order, be able to have test translated/ i18n(internationalization)
+4. Security Concerns: people's ability to modify content, icon is actually svg and we need to be able to load svg
+5. Card States: Hover, Disabled(not necessarily needed), Inverted, Click (click to show content), Focus(if there's like a link)
+6. What's it Called: pjc-card
+7. Where to Account for Flexible Content: Text areas (depending on how much text), card size
+8. Additional Resuable Atoms [4]: Icon, Body, Title, Banner
+8a. What to Call Each: pjc-icon, pjc-body, pjc-title, pjc-head, 
+
 # Team notes
 This is for maintaining communication about your team's working meetings to "ship" the project.
 
