@@ -26,8 +26,16 @@ These are notes to be maintained PER date that you meet. What you did and what t
 ## Status check ins
 These are dedicated status check-ins as this is a multi-week project
 ### Check-in 1
-- 
-- 
+- Group met over the weekend forgot to update teamnotes
+- Names (referenced from above except for last part) : pjc-icon, pjc-body, pjc-title, pjc-scaff
+- planning to distribute work evenly, researching more about html slotted part
+Elements/Key Considerations/Properties/etc.
+- pjc-icon: svg icon, color, size, must consider reusability
+- pjc-body: styling and flexibility
+- pjc-title: (this is the banner part) flexibility for text, font, color, spacing
+- pjc-scaff: (entire card including banner and body) size
+
+
 ### Check-in 2
 - 
 - 
