@@ -10,6 +10,9 @@
 8. Additional Resuable Atoms [4]: Icon, Body, Title, Banner
 8a. What to Call Each: pjc-icon, pjc-body, pjc-title, pjc-head, 
 
+10/14/2021
+Our groups all have very similar elements (if not the exact same) that we have broken the learning cards into [icon, body, banner, scaffolding]. We all discussed how we are planning on taking pieces and molding from the template that was given to us in class. Additionally we all chose to separate work by components so each individual team member took a component to work on to spred the workload. We are all very early on in the process so we still have a lot of work to complete, but our next steps are to implement simple colors and work towards Sunday check-in.
+
 # Team notes
 This is for maintaining communication about your team's working meetings to "ship" the project.
 
