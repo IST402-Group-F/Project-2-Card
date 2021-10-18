@@ -41,8 +41,9 @@ Elements/Key Considerations/Properties/etc.
 
 
 ### Check-in 2
-- 
-- 
+- The group is individually splitting up the work with Liam working on the icon element, Liz working on the banner element, and Julian working on the body element.
+- We're having issues with pushing our code to github for some reason but we can't figure out what's going wrong. It's something with husky but we aren't familiar with it so we've been struggling trying to put our code together.
+- Next steps are looking towards troubleshooting with husky and finishing up bringing our pieces together.
 ### Check-in 3
 - 
 - 
