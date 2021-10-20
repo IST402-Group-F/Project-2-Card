@@ -1,4 +1,12 @@
 **# In-class assignments**
+
+10/19/2021 - Questions/Answers
+1. What did you learn from Chuck's example? - We learned that utilizing the render function will improve our code. We also learned that we could use vh and vw variables to avoid fixed solutions.
+2. What approaches can you leverage from his example to enhacne your teams elements? - CSS styles and responsive/proportions design
+3. How could you take his approach and envision a more flexible version? - Slot within a slot and making it more modular as stated by the professor.
+4. What are your next steps? - Get together and align our sections of code in order to fully develop the icons, body, and headers necessary to design the cards. From there we will break off and continue on our own after the parameters are set.
+
+
 10/5/2021 - Questions/Answers
 1. Characteristics: Colored Banner, Icon, Header/Subheader, Content Body, 
 2. Design Considerations: Flexibility of card design for reusability, font-size, card size, heading overflow spillage, color, responsiveness
