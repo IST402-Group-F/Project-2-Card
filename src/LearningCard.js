@@ -1,6 +1,7 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
 import './LearningBanner.js';
+import "./LearningHeader.js";
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -83,6 +84,25 @@ export class LearningCard extends LitElement {
         width: var(--learning-card-width, 100px);
         background-color: green;
       }
+
+      .cardWhole {
+
+        padding: 15px;
+      }
+
+      .cardHeader {
+
+        border-width: 1px;
+        border-color: black;
+        border-style: solid;
+      }
+
+      .cardBody {
+
+        border-width: 1px;
+        border-color: black;
+        border-style: solid;
+      }
     `;
   }
 
@@ -95,24 +115,29 @@ export class LearningCard extends LitElement {
     <div>
       <div class="slot-wrapper" data-label="Header" data-layout-slotname="header">
         <slot name="header"></slot>
+
+    <div class="cardWhole">
+      <div class="cardHeader">
+        <learning-header topText="Test Top" bottomText="Test Bottom"></learning-header>
       </div>
-      <img part="icon" src="${beaker}" alt=""/>
-      <img part="icon" src="${lightbulb}" />
-      <img part="icon" src="${question}" alt=""/>
-      <div class="slot-wrapper" data-label="Content" data-layout-slotname="content">
-        <slot name="content"></slot>
-        <slot></slot>
+      <div class="cardBody">
+        <p> content body </p>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
       </div>
     </div>
     `;
   }
-  
+
   // HAX specific callback
   // This teaches HAX how to edit and work with your web component
   /**
    * haxProperties integration via file reference
    */
-   static get haxProperties() {
+  static get haxProperties() {
     return {
       canScale: false,
       canPosition: false,
