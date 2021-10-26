@@ -1,6 +1,5 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
-import './LearningBanner.js';
 import "./LearningHeader.js";
 import "./LearningIcon.js";
 // this is the base path to the assets calculated at run time
@@ -109,12 +108,6 @@ export class LearningCard extends LitElement {
   // HTML - specific to Lit
   render() {
     return html`
-    <pjc-banner> </pjc-banner>
-    <h1>cool</h1>
-    <div>${this.type}</div>
-    <div>
-      <div class="slot-wrapper" data-label="Header" data-layout-slotname="header">
-        <slot name="header"></slot>
 
     <div class="cardWhole">
       <div class="cardHeader">
