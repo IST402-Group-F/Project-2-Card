@@ -53,8 +53,10 @@ Elements/Key Considerations/Properties/etc.
 - We're having issues with pushing our code to github for some reason but we can't figure out what's going wrong. It's something with husky but we aren't familiar with it so we've been struggling trying to put our code together.
 - Next steps are looking towards troubleshooting with husky and finishing up bringing our pieces together.
 ### Check-in 3
-- 
-- 
+- Fixed (or at least temporarily fixed) merging, committing, pushing, and pulling errors that we had.
+- Liam made progress on card scaffolding and body.
+- Liz made progress on the banner/header.
+- Working on being more familiar with github, and working around husky related issues.
 ### Check-in 4
 - 
 - 
