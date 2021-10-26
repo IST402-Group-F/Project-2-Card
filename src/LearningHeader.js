@@ -9,6 +9,7 @@ export class LearningHeader extends SimpleColors{
         this.topText = "Top Text";
         this.bottomText = "Bottom Text";
         this.accentColor = "purple";
+        this.fontSize = 20;
     }
 
     static get tag(){
@@ -19,7 +20,8 @@ export class LearningHeader extends SimpleColors{
         return{
             ...super.properties,
             topText: {type: String},
-            bottomText: {type: String}
+            bottomText: {type: String},
+            fontSize: {type: BigInt},
         };
     }
 
@@ -38,8 +40,8 @@ export class LearningHeader extends SimpleColors{
     render() {
         return html`
             <div>
-                <h1 id="top-header">${this.topText}</h1>
-                <h3 id="sub-header">${this.bottomText}</h3>
+                <p style="font-size: ${this.fontSize}px" id="top-header">${this.topText}</p>
+                <b><p style="font-size: ${this.fontSize}px" id="sub-header">${this.bottomText}</p></b>
             </div>
         `
     }

@@ -94,7 +94,6 @@ export class LearningCard extends LitElement {
         border-width: 1px;
         border-color: black;
         border-style: solid;
-        
       }
 
       .cardBody {
@@ -117,7 +116,7 @@ export class LearningCard extends LitElement {
     <div class="cardWhole">
       <div class="cardHeader">
         <img class="BannerElements" part="icon" src="${this.myIcon}" alt="" />
-        <learning-header class="BannerElements" topText="Test Top" bottomText="Test Bottom"></learning-header>
+        <learning-header class="BannerElements" topText="Test Top" bottomText="Test Bottom" fontSize=20></learning-header>
       </div>
       <div class="cardBody">
         <p> content body </p>
