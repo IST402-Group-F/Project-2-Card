@@ -2,7 +2,7 @@
 import { LitElement, html, css } from 'lit';
 import './LearningBanner.js';
 import "./LearningHeader.js";
-
+import "./LearningIcon.js";
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
 // on github pages, or when people reuse assets outside your elements in production
@@ -118,6 +118,7 @@ export class LearningCard extends LitElement {
 
     <div class="cardWhole">
       <div class="cardHeader">
+        <img part="icon" src="${this.beaker}" alt="" />
         <learning-header topText="Test Top" bottomText="Test Bottom"></learning-header>
       </div>
       <div class="cardBody">
