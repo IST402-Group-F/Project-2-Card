@@ -22,7 +22,7 @@ export class LearningCard extends LitElement {
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
-    this.myIcon = null;
+    this.myIcon = lightbulb;
     this.type = 'math';
   }
 
@@ -42,7 +42,7 @@ export class LearningCard extends LitElement {
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
       if (propName === "type" && this[propName] === "science") {
-        this.myIcon = "beaker";
+        this.myIcon = beaker;
       }
     });
   }
@@ -94,6 +94,7 @@ export class LearningCard extends LitElement {
         border-width: 1px;
         border-color: black;
         border-style: solid;
+        
       }
 
       .cardBody {
@@ -101,6 +102,10 @@ export class LearningCard extends LitElement {
         border-width: 1px;
         border-color: black;
         border-style: solid;
+      }
+      .BannerElements {
+        display:inline-block;
+        vertical-align: top;
       }
     `;
   }
@@ -111,8 +116,8 @@ export class LearningCard extends LitElement {
 
     <div class="cardWhole">
       <div class="cardHeader">
-        <img part="icon" src="${this.beaker}" alt="" />
-        <learning-header topText="Test Top" bottomText="Test Bottom"></learning-header>
+        <img class="BannerElements" part="icon" src="${this.myIcon}" alt="" />
+        <learning-header class="BannerElements" topText="Test Top" bottomText="Test Bottom"></learning-header>
       </div>
       <div class="cardBody">
         <p> content body </p>
