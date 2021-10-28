@@ -115,7 +115,6 @@ export class LearningCard extends LitElement {
 
     <div class="cardWhole">
       <div class="cardHeader">
-        
         <learning-header class="BannerElements" topText="Test Top" bottomText="Test Bottom" fontSize=20></learning-header>
       </div>
       <div class="cardBody">

@@ -23,7 +23,7 @@ export class LearningHeader extends SimpleColors{
             ...super.properties,
             topText: {type: String},
             bottomText: {type: String},
-            fontSize: {type: BigInt},
+            fontSize: {type: Number},
         };
     }
 
@@ -32,8 +32,12 @@ export class LearningHeader extends SimpleColors{
             ...super.styles,
             css`
                 :host {
-                    display: inline-flex;
                     background-color: blue;
+                    font-family: 'Open Sans', Sans-Serif;
+                    color: white;
+                }
+                .HeaderElement {
+                    display: grid;
                 }
             `,
         ];
@@ -42,7 +46,9 @@ export class LearningHeader extends SimpleColors{
     render() {
         return html`
             <div>
-                <learning-icon></learning-icon>
+                <learning-icon class="HeaderElement"></learning-icon>
+            </div>
+            <div>
                 <p style="font-size: ${this.fontSize}px" id="top-header">${this.topText}</p>
                 <b><p style="font-size: ${this.fontSize}px" id="sub-header">${this.bottomText}</p></b>
             </div>
