@@ -50,13 +50,16 @@ export class LearningBanner extends SimpleColors {
             <learning-icon icon="beaker" class="icon"></learning-icon>
         </div>
         <div id = "header">
-            <div slot="main-header" id="main-header"></div>
-            <div slot="sub-header"id="sub-header"></div> 
-            <h1 id="top-header">${this.topText}</h1>
-            <h3 id="bottom-header"> ${this.bottomText}</h3>
+        <h1 id="top-header">${this.topText}</h1>
+        <h3 id="bottom-header> ${this.bottomText}</h3>
         </div>
     </div>
  `}
 }
+/**
+ * 
+        <div slot="main-header" id="main-header">Main Header Slot</div>
+        <div slot="sub-header"id="sub-header"> Sub Header Slot </div>
+ */
 
 customElements.define(LearningBanner.tag, LearningBanner);
