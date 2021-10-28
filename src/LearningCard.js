@@ -2,11 +2,6 @@
 import { LitElement, html, css } from 'lit';
 import './LearningBanner.js';
 
-//testing because idk what branch im on rn
-//help
-test = 1; 
-//help help
-
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
 // on github pages, or when people reuse assets outside your elements in production
