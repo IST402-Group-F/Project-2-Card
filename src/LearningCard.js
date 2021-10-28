@@ -1,6 +1,7 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
-import './LearningBanner.js';
+import "./LearningBanner.js";
+import "./LearningIcon.js";
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -22,7 +23,7 @@ export class LearningCard extends LitElement {
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
-    this.myIcon = null;
+    this.myIcon = lightbulb;
     this.type = 'math';
   }
 
@@ -42,7 +43,7 @@ export class LearningCard extends LitElement {
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
       if (propName === "type" && this[propName] === "science") {
-        this.myIcon = "beaker";
+        this.myIcon = beaker;
       }
     });
   }
@@ -94,6 +95,7 @@ export class LearningCard extends LitElement {
         border-width: 1px;
         border-color: black;
         border-style: solid;
+        background-color: green;
       }
 
       .cardBody {
@@ -102,22 +104,25 @@ export class LearningCard extends LitElement {
         border-color: black;
         border-style: solid;
       }
+      .BannerElements {
+        display:inline-block;
+        vertical-align: top;
+      }
     `;
   }
 
   // HTML - specific to Lit
+
+  /*
+        <learning-header class="BannerElements" topText="Test Top" bottomText="Test Bottom" fontSize=20></learning-header>
+
+  */
   render() {
     return html`
-    <pjc-banner> </pjc-banner>
-    <h1>cool</h1>
-    <div>${this.type}</div>
-    <div>
-      <div class="slot-wrapper" data-label="Banner" data-layout-slotname="banner">
-        <slot name="banner"></slot>
 
     <div class="cardWhole">
-      <div class="cardBanner">
-        <learning-banner topText="Test Top" bottomText="Test Bottom"></learning-banner>
+      <div class="cardHeader">
+        <pjc-banner topText="test12" bottomText="test34"></pjc-banner>
       </div>
       <div class="cardBody">
         <p> content body </p>
@@ -135,6 +140,7 @@ export class LearningCard extends LitElement {
   // This teaches HAX how to edit and work with your web component
   /**
    * haxProperties integration via file reference
+   * <img class="BannerElements" part="icon" src="${this.myIcon}" alt="" />
    */
   static get haxProperties() {
     return {
