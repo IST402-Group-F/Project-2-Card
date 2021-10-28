@@ -2,6 +2,7 @@
 import { LitElement, html, css } from 'lit';
 import "./LearningBanner.js";
 import "./LearningIcon.js";
+
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
 // on github pages, or when people reuse assets outside your elements in production
@@ -89,7 +90,7 @@ export class LearningCard extends LitElement {
         padding: 15px;
       }
 
-      .cardHeader {
+      .cardBanner {
 
         border-width: 1px;
         border-color: black;
@@ -176,7 +177,7 @@ export class LearningCard extends LitElement {
           properties: {
             type: "science"
           },
-          content: "<p slot='header'>This tag renders in the header</p><ul><li>This renders</li><li>Below the tag</li></ul>"
+          content: "<p slot='banner'>This tag renders in the header/banner</p><ul><li>This renders</li><li>Below the tag</li></ul>"
         }
       ]
     };
