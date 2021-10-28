@@ -33,7 +33,7 @@ export class LearningBanner extends SimpleColors {
             css`
                 :host {
                     display: block;
-                    color: white;
+                    color: black;
                 }
                 .icon {
                     
