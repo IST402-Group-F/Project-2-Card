@@ -10,6 +10,8 @@ export class LearningIcon extends SimpleColors {
     constructor() {
         super();
         this.img = lightbulb;
+        this.dark = false;
+        this.alt = "lightbulb icon";
     }
 
     static get tag() {
@@ -26,7 +28,7 @@ export class LearningIcon extends SimpleColors {
     static get styles() {
         return css`
             :host {
-                display: inline-flex;
+                display: block;
                 background-color: blue;
                 width: 100px;
                 height: 100px;
@@ -37,7 +39,7 @@ export class LearningIcon extends SimpleColors {
     render() {
         return html`
             <div>
-                <img src="${question}" part="icon" alt="">
+                <img src="${this.icon}" alt="${this.alt}">
             </div>
         `;
     }
