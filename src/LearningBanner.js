@@ -7,6 +7,8 @@ export class LearningBanner extends SimpleColors {
         super();
         this.dark = false;
         this.type = '';
+        this.topText = "Top Text";
+        this.bottomText = "Bottom Text";
         this.myIcon = null;
         this.accentColor = "purple";
     }
@@ -18,7 +20,9 @@ export class LearningBanner extends SimpleColors {
     static get properties() {
         return {
             ...super.properties,
-            type: { type: String }
+            type: { type: String },
+            topText: {type: String},
+            bottomText: {type: String}
         };
     }
 
@@ -39,24 +43,13 @@ export class LearningBanner extends SimpleColors {
         return html`
     <div id = "learningBanner">
         <div id = "header">
-            <div slot="main header" id="main-header">Main Header Slot</div>
-            <div slot="sub header"id="sub-header"> Sub Header Slot </div> 
+            <div slot="main-header" id="main-header">Main Header Slot</div>
+            <div slot="sub-header"id="sub-header"> Sub Header Slot </div> 
+            <h1 id="top-header">${this.topText}</h1>
+            <h3 id="bottom-header> ${this.bottomText}</h3>
         </div>
     </div>
- `};
+ `}
 }
 
-/**
-
-    render() {
-        return html`
-            <div>
-                <h1 id="top-header">${this.topText}</h1>
-                <h3 id="sub-header">${this.bottomText}</h3>
-            </div>
-        `
-    }
-}
-
-customElements.define(LearningHeader.tag, LearningHeader);
- */
+customElements.define(LearningBanner.tag, LearningBanner);
