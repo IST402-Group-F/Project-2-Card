@@ -1,6 +1,6 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
-import "./LearningHeader.js";
+import "./LearningBanner.js";
 import "./LearningIcon.js";
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -94,6 +94,7 @@ export class LearningCard extends LitElement {
         border-width: 1px;
         border-color: black;
         border-style: solid;
+        background-color: green;
       }
 
       .cardBody {
@@ -110,12 +111,17 @@ export class LearningCard extends LitElement {
   }
 
   // HTML - specific to Lit
+
+  /*
+        <learning-header class="BannerElements" topText="Test Top" bottomText="Test Bottom" fontSize=20></learning-header>
+
+  */
   render() {
     return html`
 
     <div class="cardWhole">
       <div class="cardHeader">
-        <learning-header class="BannerElements" topText="Test Top" bottomText="Test Bottom" fontSize=20></learning-header>
+        <pjc-banner topText="test12" bottomText="test34"></pjc-banner>
       </div>
       <div class="cardBody">
         <p> content body </p>

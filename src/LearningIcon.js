@@ -27,7 +27,7 @@ export class LearningIcon extends SimpleColors {
         return css`
             :host {
                 display: inline-flex;
-                background-color: green;
+                background-color: blue;
                 width: 100px;
                 height: 100px;
             }
