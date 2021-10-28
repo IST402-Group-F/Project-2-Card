@@ -1,7 +1,6 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
 import './LearningBanner.js';
-import "./LearningHeader.js";
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -90,7 +89,7 @@ export class LearningCard extends LitElement {
         padding: 15px;
       }
 
-      .cardHeader {
+      .cardBanner {
 
         border-width: 1px;
         border-color: black;
@@ -113,12 +112,12 @@ export class LearningCard extends LitElement {
     <h1>cool</h1>
     <div>${this.type}</div>
     <div>
-      <div class="slot-wrapper" data-label="Header" data-layout-slotname="header">
-        <slot name="header"></slot>
+      <div class="slot-wrapper" data-label="Banner" data-layout-slotname="banner">
+        <slot name="banner"></slot>
 
     <div class="cardWhole">
-      <div class="cardHeader">
-        <learning-header topText="Test Top" bottomText="Test Bottom"></learning-header>
+      <div class="cardBanner">
+        <learning-banner topText="Test Top" bottomText="Test Bottom"></learning-banner>
       </div>
       <div class="cardBody">
         <p> content body </p>
@@ -172,7 +171,7 @@ export class LearningCard extends LitElement {
           properties: {
             type: "science"
           },
-          content: "<p slot='header'>This tag renders in the header</p><ul><li>This renders</li><li>Below the tag</li></ul>"
+          content: "<p slot='banner'>This tag renders in the header/banner</p><ul><li>This renders</li><li>Below the tag</li></ul>"
         }
       ]
     };
