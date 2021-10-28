@@ -115,7 +115,7 @@ export class LearningCard extends LitElement {
 
     <div class="cardWhole">
       <div class="cardHeader">
-        <img class="BannerElements" part="icon" src="${this.myIcon}" alt="" />
+        
         <learning-header class="BannerElements" topText="Test Top" bottomText="Test Bottom" fontSize=20></learning-header>
       </div>
       <div class="cardBody">
@@ -134,6 +134,7 @@ export class LearningCard extends LitElement {
   // This teaches HAX how to edit and work with your web component
   /**
    * haxProperties integration via file reference
+   * <img class="BannerElements" part="icon" src="${this.myIcon}" alt="" />
    */
   static get haxProperties() {
     return {

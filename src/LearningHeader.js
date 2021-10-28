@@ -1,6 +1,8 @@
 import { html, css } from 'lit';
 import {SimpleColors} from "@lrnwebcomponents/simple-colors/simple-colors.js"
 
+import "./LearningIcon.js";
+
 export class LearningHeader extends SimpleColors{
 
     constructor(){
@@ -30,8 +32,8 @@ export class LearningHeader extends SimpleColors{
             ...super.styles,
             css`
                 :host {
-                    display: block;
-                    background-color: var (--simple-colors-default-theme-accent-4);
+                    display: inline-flex;
+                    background-color: blue;
                 }
             `,
         ];
@@ -40,6 +42,7 @@ export class LearningHeader extends SimpleColors{
     render() {
         return html`
             <div>
+                <learning-icon></learning-icon>
                 <p style="font-size: ${this.fontSize}px" id="top-header">${this.topText}</p>
                 <b><p style="font-size: ${this.fontSize}px" id="sub-header">${this.bottomText}</p></b>
             </div>

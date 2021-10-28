@@ -23,12 +23,21 @@ export class LearningIcon extends SimpleColors {
         };
     }
 
+    static get styles() {
+        return css`
+            :host {
+                display: inline-flex;
+                background-color: green;
+                width: 100px;
+                height: 100px;
+            }
+        `;
+    }
 
     render() {
         return html`
-
-            <div id="banner">
-                <img src="${this.icon}" alt="">
+            <div>
+                <img src="${question}" part="icon" alt="">
             </div>
         `;
     }
