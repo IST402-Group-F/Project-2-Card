@@ -21,7 +21,7 @@ export class LearningCard extends LitElement {
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
-    this.type = 'math';
+    this.type = 'question';
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -72,30 +72,14 @@ export class LearningCard extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: block;
         padding: 15px;
+        width: max(60%);
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
-      /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
-      :host([type="math"]) img{
-        background-color: purple;
-      }
-
-      .cardBanner {
-
-        border-width: 1px;
-        border-color: black;
-        border-style: solid;
-      }
-
-      .cardBody {
-
-        border-width: 1px;
-        border-color: black;
-        border-style: solid;
-      }
-      .BannerElements {
-        display:inline-block;
-        vertical-align: top;
+      .content { 
+        margin-left: 2%;
       }
     `;
   }
@@ -111,9 +95,9 @@ export class LearningCard extends LitElement {
 
     <learning-scaffold>
       <div slot="header">
-        <learning-banner topText="test12" bottomText="test34"></learning-banner>
+        <learning-banner type="${this.type}""></learning-banner>
       </div>
-      <div slot="body">
+      <div class="content" slot="body">
         <slot></slot>
       </div>
     </learning-scaffold>

@@ -7,11 +7,11 @@ export class LearningBanner extends SimpleColors {
     constructor() {
         super();
         this.dark = false;
-        this.type = '';
+        this.type = 'idea';
         this.topText = "Top Text";
         this.bottomText = "Bottom Text";
         this.myIcon = null;
-        this.accentColor = "purple";
+        this.accentColor = "deep-purple";
     }
 
     static get tag() {
@@ -40,24 +40,46 @@ export class LearningBanner extends SimpleColors {
                     display: grid;
                     grid-template-columns: 170px auto;
                     grid-column-gap: 1px;
-                    background-color: green;
+                    background-color: var(--simple-colors-default-theme-accent-7);
                 }
             `,
         ];
     }   
+
+    updated(changedProperties) {
+        changedProperties.forEach((oldValue, propName) => {
+          if (propName === "type" && this[propName] === "science") {
+            this.accentColor = "green";
+            this.topText = "Unit 1";
+            this.bottomText = "Chem Conventions";
+          }else if (propName == "type" && this[propName] === "question"){
+            this.accentColor = "deep-purple";
+            this.topText = "Unit Review";
+            this.bottomText = "Practice Problems";
+          }else if (propName == "type" && this[propName] === "idea"){
+            this.accentColor = "orange";
+            this.topText = "Unit Summary";
+            this.bottomText = "Things to remember";
+          }
+        });
+      }
+    
+      firstUpdated(changedProperties) {
+        if (super.firstUpdated) {
+          super.firstUpdated(changedProperties);
+        }
+      }
 
     //html for banner
     render() {
         return html`
     <div id = "learningBanner" class="grid-container">
         <div id = "icon">
-            <learning-icon type="science"></learning-icon>
+            <learning-icon type="${this.type}"></learning-icon>
         </div>
         <div id = "header">
-            <div slot="main-header" id="main-header"></div>
-            <div slot="sub-header"id="sub-header"></div> 
             <h1 slot="top-header">${this.topText}</h1>
-            <h3 slot="bottom-header"> ${this.bottomText}</h3>
+            <h2 slot="bottom-header"> ${this.bottomText}</h2>
         </div>
     </div>
  `}
