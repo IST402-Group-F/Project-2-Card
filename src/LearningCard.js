@@ -104,7 +104,9 @@ export class LearningCard extends LitElement {
 
   /*
         <learning-header class="BannerElements" topText="Test Top" bottomText="Test Bottom" fontSize=20></learning-header>
-
+      ignore this for now{
+        drop-shadow(0 0 0.75rem black);
+      }
   */
   render() {
     return html`

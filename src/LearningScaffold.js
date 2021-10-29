@@ -17,6 +17,26 @@ export class LearningScaffold extends SimpleColors {
         }
     }
 
+    static get styles() {
+        return [
+            ...super.styles,
+            css`
+                :host {
+                    display: block;
+                    color: black;
+                    font-family: 'Open Sans', sans-serif;
+                }
+
+                #body, #header{
+                    border: 1px solid black;
+                    background-color: white;
+                    padding: 0px;
+                    margin: 0px;
+                }
+            `,
+        ];
+    }   
+
     render() {
         return html`
             <div id="header">

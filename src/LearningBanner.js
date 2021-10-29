@@ -41,6 +41,7 @@ export class LearningBanner extends SimpleColors {
                     grid-template-columns: 170px auto;
                     grid-column-gap: 1px;
                     background-color: green;
+
                 }
             `,
         ];
