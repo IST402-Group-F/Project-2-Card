@@ -59,7 +59,7 @@ export class LearningBanner extends SimpleColors {
           }else if (propName == "type" && this[propName] === "idea"){
             this.accentColor = "orange";
             this.topText = "Unit Summary";
-            this.bottomText = "Things to remember";
+            this.bottomText = "Things to"
           }
         });
       }
@@ -79,7 +79,7 @@ export class LearningBanner extends SimpleColors {
         </div>
         <div id = "header">
             <h1 slot="top-header">${this.topText}</h1>
-            <h2 slot="bottom-header"> ${this.bottomText}</h2>
+            <h3 slot="bottom-header"> ${this.bottomText}</h3>
         </div>
     </div>
  `}
