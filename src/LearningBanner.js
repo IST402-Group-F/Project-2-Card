@@ -34,7 +34,7 @@ export class LearningBanner extends SimpleColors {
             css`
                 :host {
                     display: block;
-                    color: white;
+                    color: black;
                 }
                 .grid-container {
                     display: grid;
@@ -62,5 +62,10 @@ export class LearningBanner extends SimpleColors {
     </div>
  `}
 }
+/**
+ * 
+        <div slot="main-header" id="main-header">Main Header Slot</div>
+        <div slot="sub-header"id="sub-header"> Sub Header Slot </div>
+ */
 
 customElements.define(LearningBanner.tag, LearningBanner);
