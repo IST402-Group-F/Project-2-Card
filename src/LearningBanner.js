@@ -59,7 +59,7 @@ export class LearningBanner extends SimpleColors {
           }else if (propName == "type" && this[propName] === "idea"){
             this.accentColor = "orange";
             this.topText = "Unit Summary";
-            this.bottomText = "Things to"
+            this.bottomText = "Things to remember";
           }
         });
       }
