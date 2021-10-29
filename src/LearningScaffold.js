@@ -28,3 +28,5 @@ export class LearningScaffold extends SimpleColors {
         `;
     }
 }
+
+customElements.define(LearningScaffold.tag, LearningScaffold);
