@@ -9,9 +9,8 @@ export class LearningIcon extends SimpleColors {
 
     constructor() {
         super();
-        this.img = lightbulb;
-        this.dark = false;
-        this.alt = "lightbulb icon";
+        this.icon = lightbulb;
+        this.type = "idea";
     }
 
     static get tag() {
@@ -22,6 +21,7 @@ export class LearningIcon extends SimpleColors {
         return {
             ...super.properties,
             icon: {type: String },
+            type: {type: String },
         };
     }
 
@@ -29,17 +29,34 @@ export class LearningIcon extends SimpleColors {
         return css`
             :host {
                 display: block;
-                background-color: blue;
-                width: 100px;
-                height: 100px;
+                width: 125px;
+                height: 125px;
             }
         `;
     }
+    
+    updated(changedProperties) {
+        changedProperties.forEach((oldValue, propName) => {
+          if (propName === "type" && this[propName] === "science") {
+            this.icon = beaker;
+          }else if (propName == "type" && this[propName] === "question"){
+            this.icon = question;
+          }else if (propName == "type" && this[propName] === "idea"){
+            this.icon = lightbulb;
+          }
+        });
+      }
+
+      firstUpdated(changedProperties) {
+        if (super.firstUpdated) {
+          super.firstUpdated(changedProperties);
+        }
+      }
 
     render() {
         return html`
             <div>
-                <img src="${this.icon}" alt="${this.alt}">
+                <img src=${this.icon} part="icon" alt="">
             </div>
         `;
     }

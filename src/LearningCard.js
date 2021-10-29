@@ -2,15 +2,13 @@
 import { LitElement, html, css } from 'lit';
 import "./LearningBanner.js";
 import "./LearningIcon.js";
+import "./LearningScaffold.js";
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
 // on github pages, or when people reuse assets outside your elements in production
 // because this won't change we can leverage as an internal variable without being
 // declared in properties. This let's us ship the icons while referencing them correctly
-const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
-const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
-const question = new URL('../assets/question.svg', import.meta.url).href;
 
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
@@ -23,7 +21,6 @@ export class LearningCard extends LitElement {
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
-    this.myIcon = lightbulb;
     this.type = 'math';
   }
 
@@ -34,7 +31,6 @@ export class LearningCard extends LitElement {
       type: { type: String, reflect: true },
       // attribute helps us bind the JS spec for variables names to the HTML spec
       // <learning-card my-icon="whatever" will set this.myIcon to "whatever"
-      myIcon: { type: String, attribute: "my-icon" },
     };
   }
 
@@ -43,7 +39,11 @@ export class LearningCard extends LitElement {
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
       if (propName === "type" && this[propName] === "science") {
-        this.myIcon = beaker;
+        
+      }else if (propName == "type" && this[propName] === "question"){
+
+      }else if (propName == "type" && this[propName] === "idea"){
+        
       }
     });
   }
@@ -73,21 +73,11 @@ export class LearningCard extends LitElement {
     return css`
       :host {
         display: block;
+        padding: 15px;
       }
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
       :host([type="math"]) img{
         background-color: purple;
-      }
-      img {
-        display: inline-flex;
-        height: var(--learning-card-height, 100px);
-        width: var(--learning-card-width, 100px);
-        background-color: green;
-      }
-
-      .cardWhole {
-
-        padding: 15px;
       }
 
       .cardBanner {
@@ -95,7 +85,6 @@ export class LearningCard extends LitElement {
         border-width: 1px;
         border-color: black;
         border-style: solid;
-        background-color: green;
       }
 
       .cardBody {
@@ -120,19 +109,14 @@ export class LearningCard extends LitElement {
   render() {
     return html`
 
-    <div class="cardWhole">
-      <div class="cardHeader">
+    <learning-scaffold>
+      <div slot="header">
         <pjc-banner topText="test12" bottomText="test34"></pjc-banner>
       </div>
-      <div class="cardBody">
-        <p> content body </p>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-          </ul>
+      <div slot="body">
+        <slot></slot>
       </div>
-    </div>
+    </learning-scaffold>
     `;
   }
 

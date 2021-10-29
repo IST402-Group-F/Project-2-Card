@@ -20,7 +20,7 @@ export class LearningScaffold extends SimpleColors {
     render() {
         return html`
             <div id="header">
-                <slot name="header></slot>
+                <slot name="header"></slot>
             </div>
             <div id="body">
                 <slot name="body"></slot>
@@ -28,3 +28,5 @@ export class LearningScaffold extends SimpleColors {
         `;
     }
 }
+
+customElements.define(LearningScaffold.tag, LearningScaffold);

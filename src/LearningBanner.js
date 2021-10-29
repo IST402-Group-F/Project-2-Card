@@ -21,9 +21,10 @@ export class LearningBanner extends SimpleColors {
     static get properties() {
         return {
             ...super.properties,
-            type: { type: String },
+            type: { type: String, reflect: true },
             topText: {type: String},
-            bottomText: {type: String}
+            bottomText: {type: String},
+            icon: {type: String}
         };
     }
 
@@ -33,25 +34,30 @@ export class LearningBanner extends SimpleColors {
             css`
                 :host {
                     display: block;
-                    color: white;
+                    color: black;
                 }
-                .icon {
-                    
+                .grid-container {
+                    display: grid;
+                    grid-template-columns: 170px auto;
+                    grid-column-gap: 1px;
+                    background-color: green;
                 }
             `,
         ];
-    }
+    }   
 
     //html for banner
     render() {
         return html`
-    <div id = "learningBanner">
+    <div id = "learningBanner" class="grid-container">
         <div id = "icon">
-            <learning-icon icon="beaker" class="icon"></learning-icon>
+            <learning-icon type="science"></learning-icon>
         </div>
         <div id = "header">
-        <h1 id="top-header">${this.topText}</h1>
-        <h3 id="bottom-header> ${this.bottomText}</h3>
+            <div slot="main-header" id="main-header"></div>
+            <div slot="sub-header"id="sub-header"></div> 
+            <h1 slot="top-header">${this.topText}</h1>
+            <h3 slot="bottom-header"> ${this.bottomText}</h3>
         </div>
     </div>
  `}
