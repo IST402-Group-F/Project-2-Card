@@ -9,8 +9,8 @@ export class LearningIcon extends SimpleColors {
 
     constructor() {
         super();
-        this.img = lightbulb;
-        this.type = "science";
+        this.icon = lightbulb;
+        this.type = "idea";
     }
 
     static get tag() {
@@ -20,7 +20,7 @@ export class LearningIcon extends SimpleColors {
     static get properties() {
         return {
             ...super.properties,
-            img: {type: String },
+            icon: {type: String },
             type: {type: String },
         };
     }
@@ -38,11 +38,11 @@ export class LearningIcon extends SimpleColors {
     updated(changedProperties) {
         changedProperties.forEach((oldValue, propName) => {
           if (propName === "type" && this[propName] === "science") {
-            this.img = beaker;
+            this.icon = beaker;
           }else if (propName == "type" && this[propName] === "question"){
-            this.img = question;
+            this.icon = question;
           }else if (propName == "type" && this[propName] === "idea"){
-            this.img = lightbulb;
+            this.icon = lightbulb;
           }
         });
       }
@@ -56,7 +56,7 @@ export class LearningIcon extends SimpleColors {
     render() {
         return html`
             <div>
-                <img src=${this.img} part="icon" alt="">
+                <img src=${this.icon} part="icon" alt="">
             </div>
         `;
     }

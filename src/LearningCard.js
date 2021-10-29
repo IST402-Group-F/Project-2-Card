@@ -109,19 +109,14 @@ export class LearningCard extends LitElement {
   render() {
     return html`
 
-    <div>
-      <div class="cardBanner">
+    <learning-scaffold>
+      <div slot="header">
         <pjc-banner topText="test12" bottomText="test34"></pjc-banner>
       </div>
-      <div class="cardBody">
-        <p> content body </p>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-          </ul>
+      <div slot="body">
+        <slot></slot>
       </div>
-    </div>
+    </learning-scaffold>
     `;
   }
 
