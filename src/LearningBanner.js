@@ -79,7 +79,7 @@ export class LearningBanner extends SimpleColors {
         </div>
         <div id = "header">
             <h1 slot="top-header">${this.topText}</h1>
-            <h3 slot="bottom-header"> ${this.bottomText}</h3>
+            <h2 slot="bottom-header"> ${this.bottomText}</h2>
         </div>
     </div>
  `}
