@@ -15,7 +15,7 @@ export class LearningBanner extends SimpleColors {
     }
 
     static get tag() {
-        return 'pjc-banner';
+        return 'learning-banner';
     }
 
     static get properties() {
@@ -34,7 +34,7 @@ export class LearningBanner extends SimpleColors {
             css`
                 :host {
                     display: block;
-                    color: black;
+                    color: white;
                 }
                 .grid-container {
                     display: grid;
