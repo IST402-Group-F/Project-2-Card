@@ -58,5 +58,4 @@ Elements/Key Considerations/Properties/etc.
 - Liz made progress on the banner/header.
 - Working on being more familiar with github, and working around husky related issues.
 ### Check-in 4
-- 
-- 
+- Group went to office hours on Friday and we finished most of the front-end work. All that is left is the storybook and tests.
