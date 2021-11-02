@@ -1,8 +1,8 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
-import "./LearningBanner.js";
-import "./LearningIcon.js";
-import "./LearningScaffold.js";
+import './LearningBanner.js';
+import './LearningIcon.js';
+import './LearningScaffold.js';
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -15,13 +15,15 @@ import "./LearningScaffold.js";
 export class LearningCard extends LitElement {
   // a convention I enjoy so you can change the tag name in 1 place
   static get tag() {
-    return "learning-card";
+    return 'learning-card';
   }
 
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
     this.type = 'question';
+    this.topText = '';
+    this.bottomText = '';
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -29,8 +31,8 @@ export class LearningCard extends LitElement {
     return {
       // reflect allows state changes to the element's property to be leveraged in CSS selectors
       type: { type: String, reflect: true },
-      // attribute helps us bind the JS spec for variables names to the HTML spec
-      // <learning-card my-icon="whatever" will set this.myIcon to "whatever"
+      topText: { type: String, reflect: true },
+      bottomText: { type: String, reflect: true },
     };
   }
 
@@ -38,12 +40,15 @@ export class LearningCard extends LitElement {
   // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
-      if (propName === "type" && this[propName] === "science") {
-        
-      }else if (propName == "type" && this[propName] === "question"){
-
-      }else if (propName == "type" && this[propName] === "idea"){
-        
+      if (propName === 'type' && this[propName] === 'science') {
+        this.topText = 'Unit 1';
+        this.bottomText = 'Chem Conventions';
+      } else if (propName === 'type' && this[propName] === 'question') {
+        this.topText = 'Unit Review';
+        this.bottomText = 'Practice Problems';
+      } else if (propName === 'type' && this[propName] === 'idea') {
+        this.topText = 'Unit Summary';
+        this.bottomText = 'Things to remember';
       }
     });
   }
@@ -78,7 +83,7 @@ export class LearningCard extends LitElement {
         margin-left: auto;
         margin-right: auto;
       }
-      .content { 
+      .content {
         margin-left: 2%;
       }
     `;
@@ -94,15 +99,18 @@ export class LearningCard extends LitElement {
   */
   render() {
     return html`
-
-    <learning-scaffold>
-      <div slot="header">
-        <learning-banner type="${this.type}""></learning-banner>
-      </div>
-      <div class="content" slot="body">
-        <slot></slot>
-      </div>
-    </learning-scaffold>
+      <learning-scaffold>
+        <div slot="header">
+          <learning-banner
+            type="${this.type}"
+            topText="${this.topText}"
+            bottomText="${this.bottomText}"
+          ></learning-banner>
+        </div>
+        <div class="content" slot="body">
+          <slot></slot>
+        </div>
+      </learning-scaffold>
     `;
   }
 
@@ -119,37 +127,37 @@ export class LearningCard extends LitElement {
       canEditSource: true,
       contentEditable: true,
       gizmo: {
-        title: "Learning Card",
-        description: "An element that you have to replace / fix / improve",
-        icon: "credit-card",
-        color: "blue",
-        groups: ["Content", "Presentation", "Education"],
+        title: 'Learning Card',
+        description: 'An element that you have to replace / fix / improve',
+        icon: 'credit-card',
+        color: 'blue',
+        groups: ['Content', 'Presentation', 'Education'],
       },
       settings: {
         configure: [
           {
-            property: "type",
-            title: "Type",
-            description: "Identifies the card",
-            inputMethod: "select",
+            property: 'type',
+            title: 'Type',
+            description: 'Identifies the card',
+            inputMethod: 'select',
             options: {
-              science: "Science",
-              math: "Math",
-            }
+              science: 'Science',
+              math: 'Math',
+            },
           },
         ],
-        advanced: [
-        ],
+        advanced: [],
       },
       demoSchema: [
         {
           tag: LearningCard.tag,
           properties: {
-            type: "science"
+            type: 'science',
           },
-          content: "<p slot='banner'>This tag renders in the header/banner</p><ul><li>This renders</li><li>Below the tag</li></ul>"
-        }
-      ]
+          content:
+            "<p slot='banner'>This tag renders in the header/banner</p><ul><li>This renders</li><li>Below the tag</li></ul>",
+        },
+      ],
     };
   }
 }
