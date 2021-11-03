@@ -1,12 +1,12 @@
 {
-  "name": "@lrnwebcomponents/project-two",
-  "description": "Webcomponent project-two following open-wc recommendations",
+  "name": "@ist402groupf/learning-card",
+  "description": "Webcomponent Learning Card following open-wc recommendations",
   "license": "Apache-2.0",
-  "author": "project-two",
+  "author": "Group F",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/elmsln/project-two.git"
+    "url": "https://github.com/IST402-Group-F/Project-2-Card.git"
   },
   "scripts": {
     "lint": "eslint --ext .js,.html . --ignore-path .gitignore && prettier \"**/*.js\" --check --ignore-path .gitignore",
