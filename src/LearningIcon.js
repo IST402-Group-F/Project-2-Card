@@ -1,11 +1,10 @@
-import { html, css } from 'lit';
-import { SimpleColors } from '@lrnwebcomponents/simple-colors';
+import { html, css, LitElement } from 'lit';
 
 const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
 const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
 const question = new URL('../assets/question.svg', import.meta.url).href;
 
-export class LearningIcon extends SimpleColors {
+export class LearningIcon extends LitElement {
 
     constructor() {
         super();
@@ -19,7 +18,6 @@ export class LearningIcon extends SimpleColors {
 
     static get properties() {
         return {
-            ...super.properties,
             icon: {type: String },
             type: {type: String },
         };
@@ -45,12 +43,6 @@ export class LearningIcon extends SimpleColors {
             this.icon = lightbulb;
           }
         });
-      }
-
-      firstUpdated(changedProperties) {
-        if (super.firstUpdated) {
-          super.firstUpdated(changedProperties);
-        }
       }
 
     render() {
